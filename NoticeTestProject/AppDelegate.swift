@@ -6,14 +6,33 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseRemoteConfig
+import FirebaseAnalytics
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var remoteConfig: RemoteConfig!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        remoteConfig = RemoteConfig.remoteConfig()
+        let setting = RemoteConfigSettings()
+        setting.minimumFetchInterval = 0
+        remoteConfig?.configSettings = setting
+        
+        Installations.installations().authTokenForcingRefresh(true, completion: { (result, error) in
+          if let error = error {
+            print("Error fetching token: \(error)")
+            return
+          }
+          guard let result = result else { return }
+          print("Installation auth token: \(result.authToken)")
+        })
+       
+        
         return true
     }
 
