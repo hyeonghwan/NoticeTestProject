@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>notice_isHidden</key>
+	<false/>
+	<key>notice_Title</key>
+	<string>ㅗㅗㅗ</string>
+	<key>notice_Content</key>
+	<string>내일 새벽에 서버점검을 할 예정입니다</string>
+	<key>notice_Time</key>
+	<string>AM 03:00 ~ 06:30</string>
+	<key>notice_Day</key>
+	<string>2022.03.10~2022.03.10 </string>
+</dict>
+</plist>
